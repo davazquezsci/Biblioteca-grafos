@@ -1,10 +1,10 @@
-## Biblioteca-grafos 
+# Biblioteca-grafos 
 
 Este repositorio contiene una biblioteca orientada a objetos en Python 3 para la generación y visualización de grafos, así como la implementación de distintos modelos clásicos de generación de grafos aleatorios.
 
 El proyecto fue desarrollado como parte del curso Diseño de Algoritmos. 
 
-# Modelos implementados
+## Modelos implementados
 
 Se implementan los siguientes modelos de generación de grafos:
 
@@ -22,24 +22,24 @@ Se implementan los siguientes modelos de generación de grafos:
 
 Cada modelo genera grafos dirigidos o no dirigidos, según el parámetro correspondiente. 
 
-# Estructura del proyecto 
+## Estructura del proyecto 
 
-Biblioteca-grafos/
-│
-├── src/
-│   ├── grafo.py          # Clases Nodo, Arista y Grafo
-│   └── modelos.py        # Implementación de los modelos
-│
-├── tests/                # Scripts de prueba
-│
-├── outputs/
-│   ├── gv/               # Archivos GraphViz (.gv)
-│   └── img/              # Imágenes generadas con Gephi
-│
-├── generate_all_gv.py    # Script para generar todos los grafos
-└── README.md
+    Biblioteca-grafos/
+    │
+    ├── src/
+    │   ├── grafo.py          # Clases Nodo, Arista y Grafo
+    │   └── modelos.py        # Implementación de los modelos
+    │
+    ├── tests/                # Scripts de prueba
+    │
+    ├── outputs/
+    │   ├── gv/               # Archivos GraphViz (.gv)
+    │   └── img/              # Imágenes generadas con Gephi
+    │
+    ├── generate_all_gv.py    # Script para generar todos los grafos
+    └── README.md
 
-# Uso  
+## Uso  
 
 Desde la raíz del proyecto, ejecutar:
 
@@ -54,7 +54,7 @@ Este script genera automáticamente:
 
     >> Los archivos se guardan en outputs/gv/ 
 
-# Visualizacion  
+## Visualizacion  
 
 Los archivos .gv pueden abrirse directamente en Gephi:
 
