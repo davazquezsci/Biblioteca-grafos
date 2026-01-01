@@ -80,6 +80,6 @@ Cada imagen corresponde a un archivo .gv generado por el script.
 
 # Autor
 
-Daniel Vázquez
-Instituto Politécnico Nacional
-Maestría en Ciencias de la Computación
+    Daniel Vázquez
+    Instituto Politécnico Nacional
+    Maestría en Ciencias de la Computación
