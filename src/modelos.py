@@ -210,6 +210,8 @@ def grafoBarabasiAlbert(n: int, d: int, dirigido: bool = False, seed: Optional[i
     return g
 
 
+
+
 def grafoDorogovtsevMendes(n: int, dirigido: bool = False, seed: Optional[int] = None) -> Grafo:
     """
     Modelo Gn Dorogovtsev–Mendes:
@@ -225,22 +227,25 @@ def grafoDorogovtsevMendes(n: int, dirigido: bool = False, seed: Optional[int] =
     for i in range(n):
         g.add_nodo(i)
 
-    # triángulo inicial entre 0,1,2
+    # triángulo inicial
     g.add_arista(0, 1)
     g.add_arista(1, 2)
     g.add_arista(2, 0)
 
-    # lista de aristas existentes para elegir uniforme
-    # usaremos claves normalizadas si es no dirigido.
-    edge_list = list(g._aristas_key)  # (u_id, v_id)
+    # lista de aristas como pares (u_id, v_id)
+    # en no dirigido guardamos (min,max) para normalizar
+    def norm(u, v):
+        return (u, v) if dirigido else ((u, v) if u < v else (v, u))
+
+    edge_list = [norm(0, 1), norm(1, 2), norm(0, 2)]
 
     for new_node in range(3, n):
         u, v = rng.choice(edge_list)
+
         g.add_arista(new_node, u)
         g.add_arista(new_node, v)
 
-        # agregar nuevas aristas a la lista (ya normalizadas por el Grafo)
-        edge_list.append(g._key_arista(g.get_nodo(new_node), g.get_nodo(u)))
-        edge_list.append(g._key_arista(g.get_nodo(new_node), g.get_nodo(v)))
+        edge_list.append(norm(new_node, u))
+        edge_list.append(norm(new_node, v))
 
     return g
